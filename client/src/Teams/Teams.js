@@ -26,13 +26,12 @@ export default function Teams() {
   const nodeApiUrl = '';
   useEffect(() => {
     async function fetchApi(){
-      const request0 = nodeApiUrl + apiEnd.currSeason;
+      const request0 = nodeApiUrl + apiEnd.currentSeason;
       const request1 = nodeApiUrl + apiEnd.teams;
       const request2 = nodeApiUrl + apiEnd.teamStats;
 
       const response = await axios.get(request0);
       const [res1, res2] = await Promise.all([
-        axios.get(request0)
         axios.get(request1),
         axios.get(request2+'/'+response.data.Season),
       ]);
