@@ -29,12 +29,12 @@ app.use(cookieParser());
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, 'client/build')));
 
-app.use('/api', indexRouter);
-app.use('/api/basic', basicRouter);
-app.use('/api/games', gamesRouter);
-app.use('/api/teams', teamsRouter);
-app.use('/api/media', mediaRouter);
-app.use('/api/players', playerRouter);
+app.use('/', indexRouter);
+app.use('/basic', basicRouter);
+app.use('/games', gamesRouter);
+app.use('/teams', teamsRouter);
+app.use('/media', mediaRouter);
+app.use('/players', playerRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
