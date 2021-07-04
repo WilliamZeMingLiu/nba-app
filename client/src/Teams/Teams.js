@@ -32,6 +32,7 @@ export default function Teams() {
 
       const response = await axios.get(request0);
       const [res1, res2] = await Promise.all([
+        axios.get(request0)
         axios.get(request1),
         axios.get(request2+'/'+response.data.Season),
       ]);
