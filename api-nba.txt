@@ -1,0 +1,38 @@
+Seasons:
+    2015: (1 - 1427)
+    2016: (1428 - 4301)
+    2017: (4302 - 5705)
+    2018: (5706 - 6299)
+    2019: (6300 - 8132)
+    2020: (8133 - )
+    *numbers are not accurate, includes playoffs/pre-season
+
+/statistics/players/playerId/
+response.data.api.statistics
+[
+    "gameId",
+    "teamId",
+    "points",
+    "pos",
+    "min",
+    "fgm",
+    "fga",
+    "fgp",
+    "ftm",
+    "fta",
+    "ftp",
+    "tpm",
+    "tpa",
+    "tpp",
+    "offReb",
+    "defReb",
+    "totReb",
+    "assists",
+    "pFouls",
+    "steals",
+    "turnovers",
+    "blocks",
+    "plusMinus",
+    "playerId"
+]
+
