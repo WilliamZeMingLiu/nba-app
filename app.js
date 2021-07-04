@@ -14,6 +14,8 @@ var playerRouter = require('./routes/players');
 
 var app = express();
 
+
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -24,14 +26,15 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, 'client/build')));
 
-app.use('/', indexRouter);
-app.use('/basic', basicRouter);
-app.use('/games', gamesRouter);
-app.use('/teams', teamsRouter);
-app.use('/media', mediaRouter);
-app.use('/players', playerRouter);
+app.use('/api', indexRouter);
+app.use('/api/basic', basicRouter);
+app.use('/api/games', gamesRouter);
+app.use('/api/teams', teamsRouter);
+app.use('/api/media', mediaRouter);
+app.use('/api/players', playerRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
